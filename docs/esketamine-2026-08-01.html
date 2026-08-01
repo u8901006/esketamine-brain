@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Esketamine Brain · Esketamine 文獻日報 · 2026年8月1日</title>
+<meta name="description" content="2026年8月1日 Esketamine / TRD 文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .clinic-banner { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .clinic-links { display: flex; flex-direction: column; gap: 12px; }
+  .clinic-link { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .clinic-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .clinic-icon { font-size: 28px; flex-shrink: 0; }
+  .clinic-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .clinic-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } .clinic-links { gap: 8px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Esketamine Brain · Esketamine 文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年8月1日</span>
+        <span class="badge badge-count">📊 15 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日 Esketamine / TRD 文獻趨勢</h2>
+    <p class="summary-text">今日文獻顯示，Esketamine 的臨床應用更趨向於與其他療法（如 rTMS、Brexpiprazole）進行精確的頭對頭比較，證實其在快速改善自殺風險及起效速度上的優勢。同時，安全監測數據強調了在合併物質使用障礙患者中使用的謹慎性，而口服低劑量方案的生物標記（BDNF）變化研究則揭示了其與靜脈注射在神經可塑性機制上的潛在差異。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div><div class="news-card featured"><div class="card-header"><span class="rank-badge">#1</span><span class="emoji-icon">🧠</span><span class="utility-high">高實用性</span></div><h3>TRD 的維度效應特徵：Esketamine 鼻噴霧、arTMS 與口服 Brexpiprazole 的前瞻性頭對頭比較</h3><p class="journal-source">Journal of affective disorders &middot; Dimensional effect profiles in treatment-resistant depression: A naturalistic, prospective head-to-head comparison of arTMS, esketamine nasal spray, and oral brexpiprazole.</p><p>本研究在真實世界場景下，比較了 Esketamine 鼻噴霧與 arTMS 及 Brexpiprazole 的治療效果，發現三者均能改善 TRD，但呈現出不同的症狀特徵（如 Brexpiprazole 偏重於反芻，Esketamine 偏重於情感反應性）。</p><div class="pico-grid"><div class="pico-item"><span class="pico-label">P</span><span class="pico-text">難治型憂鬱症（TRD）患者</span></div><div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Esketamine 鼻噴霧、加速重複經顱磁刺激（arTMS）、口服 Brexpiprazole</span></div><div class="pico-item"><span class="pico-label">C</span><span class="pico-text">三者之間的短期變化與維度效應特徵（快感缺失、反芻、焦慮）</span></div><div class="pico-item"><span class="pico-label">O</span><span class="pico-text">憂鬱症嚴重度、快感缺失、反芻、焦慮程度的改善差異</span></div></div><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">Esketamine/Spravato</span><span class="tag">rTMS/腦刺激</span><span class="tag">藥物增效</span><span class="tag">真實世界數據</span><a href="https://pubmed.ncbi.nlm.nih.gov/42521097/" target="_blank">閱讀原文 →</a></div></div><div class="news-card featured"><div class="card-header"><span class="rank-badge">#2</span><span class="emoji-icon">💊</span><span class="utility-mid">中實用性</span></div><h3>難治型憂鬱症口服 Esketamine 後的血清腦源性神經營養因子</h3><p class="journal-source">Journal of affective disorders &middot; Serum brain-derived neurotrophic factor following oral esketamine in treatment-resistant depression: Results from a randomized placebo-controlled trial.</p><p>每天低劑量口服 Esketamine 並未顯著提高血清 BDNF 水平，且其變化與憂鬱症狀改善無顯著相關，暗示口服低劑量方案可能未達到誘發突觸可塑性的臨床閾值。</p><div class="pico-grid"><div class="pico-item"><span class="pico-label">P</span><span class="pico-text">難治型憂鬱症患者</span></div><div class="pico-item"><span class="pico-label">I</span><span class="pico-text">每日口服 Esketamine (90 mg/天)</span></div><div class="pico-item"><span class="pico-label">C</span><span class="pico-text">安慰劑</span></div><div class="pico-item"><span class="pico-label">O</span><span class="pico-text">血清 BDNF 水平的變化及其與憂鬱症狀改善的相關性</span></div></div><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">Ketamine</span><span class="tag">神經可塑性</span><span class="tag">生物標記</span><span class="tag">BDNF</span><span class="tag">麩胺酸系統</span><a href="https://pubmed.ncbi.nlm.nih.gov/42462931/" target="_blank">閱讀原文 →</a></div></div><div class="news-card featured"><div class="card-header"><span class="rank-badge">#3</span><span class="emoji-icon">⚠️</span><span class="utility-high">高實用性</span></div><h3>精神科處方偏誤與 Esketamine 在合併物質使用障礙患者的負面結果</h3><p class="journal-source">Journal of affective disorders &middot; Prescribing bias and adverse outcomes of esketamine in major depression comorbid substance.</p><p>大數據回溯分析發現，Esketamine 治療的 MDD 患者若合併物質使用障礙（SUD），其自傷、自殺企圖、急診就診及住院的風險顯著高於無 SUD 患者。</p><div class="pico-grid"><div class="pico-item"><span class="pico-label">P</span><span class="pico-text">合併物質使用障礙的重度憂鬱症（MDD）患者</span></div><div class="pico-item"><span class="pico-label">I</span><span class="pico-text">接受 Esketamine 治療</span></div><div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未合併 SUD 的患者 或接受傳統抗憂鬱藥/rTMS 的患者</span></div><div class="pico-item"><span class="pico-label">O</span><span class="pico-text">自傷、自殺企圖、急診就診、住院及死亡風險</span></div></div><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">Esketamine/Spravato</span><span class="tag">自殺意念</span><span class="tag">真實世界數據</span><span class="tag">藥物副作用</span><span class="tag">物質使用障礙</span><a href="https://pubmed.ncbi.nlm.nih.gov/42264307/" target="_blank">閱讀原文 →</a></div></div><div class="news-card featured"><div class="card-header"><span class="rank-badge">#4</span><span class="emoji-icon">⚡</span><span class="utility-high">高實用性</span></div><h3>比較難治型憂鬱症中 rTMS 與 Esketamine 的治療反應軌跡</h3><p class="journal-source">Journal of affective disorders &middot; Comparing transcranial magnetic stimulation and esketamine treatment response trajectories in resistant depression.</p><p>真實世界數據顯示，Esketamine 在 90 天內的起效時間及緩解自殺意念的速度顯著優於 rTMS，且 Cumulative 緩解率略高，但在療效上兩者最終趨於一致。</p><div class="pico-grid"><div class="pico-item"><span class="pico-label">P</span><span class="pico-text">難治型憂鬱症患者</span></div><div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Esketamine (n=93) vs rTMS (n=279)</span></div><div class="pico-item"><span class="pico-label">C</span><span class="pico-text">頭對頭比較</span></div><div class="pico-item"><span class="pico-label">O</span><span class="pico-text">臨床反應時間、緩解率、自殺意念改善速度</span></div></div><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">Esketamine/Spravato</span><span class="tag">rTMS/腦刺激</span><span class="tag">真實世界數據</span><span class="tag">自殺意念</span><a href="https://pubmed.ncbi.nlm.nih.gov/42259490/" target="_blank">閱讀原文 →</a></div></div><div class="news-card featured"><div class="card-header"><span class="rank-badge">#5</span><span class="emoji-icon">🧬</span><span class="utility-high">高實用性</span></div><h3>重度憂鬱症中的內在興奮抑制失衡</h3><p class="journal-source">Journal of affective disorders &middot; Intrinsic excitation-inhibition imbalance in major depressive disorder.</p><p>大腦 MRI 顯示 TRD 患者皮質存在廣泛的興奮抑制失衡，且與特定的神經傳導物質及基因標記相關；本研究進一步指出 Ketamine 可能能在前扣帶迴恢復這種平衡。</p><div class="pico-grid"><div class="pico-item"><span class="pico-label">P</span><span class="pico-text">重度憂鬱症（MDD）/ 難治型憂鬱症（TRD）患者</span></div><div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Ketamine</span></div><div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康對照組 (HC)</span></div><div class="pico-item"><span class="pico-label">O</span><span class="pico-text">大腦興奮抑制比率（Hurst exponent）的變化及其與基因/神經化學標記的關聯</span></div></div><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">Ketamine</span><span class="tag">麩胺酸系統</span><span class="tag">神經可塑性</span><span class="tag">AMPA</span><span class="tag">發炎/細胞激素</span><a href="https://pubmed.ncbi.nlm.nih.gov/42372880/" target="_blank">閱讀原文 →</a></div></div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">👴</span><span class="utility-mid utility-sm">中</span></div><h3>晚期重度憂鬱症的藥物治療：來自德國 AMSP 藥物監測計畫的結果</h3><p class="journal-source">Journal of affective disorders</p><p>針對 2007-2023 年德國住院患者的監測數據顯示，65 歲以上老年患者更常使用抗精神病藥及鎮靜催眠藥，提示老年 TRD 的治療策略需更注重複合療法的安全性。</p><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">真實世界數據</span><span class="tag">老年憂鬱症</span><span class="tag">藥物監測</span><span class="tag">抗精神病藥</span><a href="https://pubmed.ncbi.nlm.nih.gov/42503320/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">🦠</span><span class="utility-mid utility-sm">中</span></div><h3>庫魯細菌豐度與視覺學習記憶缺損的關聯</h3><p class="journal-source">Journal of affective disorders</p><p>研究指出 MDD 患者腦灰白質同時出現代謝失調（前扣帶迴 NAA/Cr 升高，白質降低），這種代謝「雙重打擊」與庫魯細菌豐度相關，並加劇了視覺記憶缺損。</p><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">大腦微生物群</span><span class="tag">神經影像</span><span class="tag">認知功能</span><span class="tag">代謝</span><a href="https://pubmed.ncbi.nlm.nih.gov/42521095/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">🎧</span><span class="utility-mid utility-sm">中</span></div><h3>壓力導向的技術引導加速 iTBS 在 TRD 中的治療效果預測</h3><p class="journal-source">Psychiatry research</p><p>加速 iTBS 在 TRD 中效果顯著，且靜息態 fMRI 顯示中腦邊緣路徑（右側 NAcc 與左側 VTA）的功能連結預測了治療反應。</p><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">rTMS/腦刺激</span><span class="tag">神經影像</span><span class="tag">獎勵迴路</span><a href="https://pubmed.ncbi.nlm.nih.gov/42537324/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">💔</span><span class="utility-high utility-sm">高</span></div><h3>負向情緒與童年創傷對重度憂鬱症自殺企圖的預測</h3><p class="journal-source"></p><p>fMRI 顯示有自殺企圖史的 MDD 患者在感覺、注意力及自我參照系統網絡（SN, DMN）之間的連結較低，且童年的性創傷與這些網絡異常有關。</p><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">自殺意念</span><span class="tag">神經影像</span><span class="tag">童年創傷</span><span class="tag">網絡生物標記</span><a href="https://pubmed.ncbi.nlm.nih.gov/42264308/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">👂</span><span class="utility-mid utility-sm">中</span></div><h3>反芻與社交焦慮症的腦電波差異分析</h3><p class="journal-source"></p><p>fMRI ICA 分析顯示，MDD 與社交焦慮症（SAD）在顯著性網絡（SN）和聽覺相關迴路中存在不同頻率範圍的功能連接差異，有助於鑑別診斷。</p><div class="card-footer"><span class="tag">重度憂鬱症</span><span class="tag">社交焦慮症</span><span class="tag">神經影像</span><span class="tag">自殺意念</span><a href="https://pubmed.ncbi.nlm.nih.gov/42264313/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">🔋</span><span class="utility-mid utility-sm">中</span></div><h3>激動型憂鬱症的神經電生理特徵與反應性</h3><p class="journal-source"></p><p>針對青少年激動型憂鬱症（mMDD）的研究發現其獎勵預期信號（SPN）較高但獎勵預期誘發電位（RewP）較低，且與快感缺失顯著相關。</p><div class="card-footer"><span class="tag">重度憂鬱症</span><span class="tag">青少年</span><span class="tag">獎勵功能</span><span class="tag">腦電波</span><a href="https://pubmed.ncbi.nlm.nih.gov/42285528/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">🧬</span><span class="utility-low utility-sm">低</span></div><h3>雙極性情感障礙與重度憂鬱症的遺傳共享架構</h3><p class="journal-source"></p><p>整合單細胞表現量數據與 GWAS 分析，發現了三個共享的候選基因（ZSCAN31, BTN3A2, YLPM1），並揭示了兩者在大腦特定細胞類型中的調控機制。</p><div class="card-footer"><span class="tag">重度憂鬱症</span><span class="tag">遺傳學</span><span class="tag">精神分裂症</span><span class="tag">生物標記</span><a href="https://pubmed.ncbi.nlm.nih.gov/42372879/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">🩸</span><span class="utility-mid utility-sm">中</span></div><h3>治療對 sphingosine-1-phosphate 及其受體的影響：生物標記的意義</h3><p class="journal-source"></p><p>MDD 患者基線時外周 S1P 及其受體水平升高，治療後恢復正常，且基線 S1P 水平可預測症狀改善，女性患者受體變化更顯著。</p><div class="card-footer"><span class="tag">難治型憂鬱症</span><span class="tag">生物標記</span><span class="tag">發炎/細胞激素</span><span class="tag">性別差異</span><a href="https://pubmed.ncbi.nlm.nih.gov/42527914/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">🥗</span><span class="utility-mid utility-sm">中</span></div><h3>口炎性瀰漫性腸胃炎與重度憂鬱症的關聯</h3><p class="journal-source"></p><p>在瑞士隊列中，高度遵守 EAT-Lancet 飲食模式與降低非典型憂鬱症的風險顯著相關，提示飲食介入可能對特定憂鬱亞型有益。</p><div class="card-footer"><span class="tag">重度憂鬱症</span><span class="tag">飲食</span><span class="tag">非典型憂鬱症</span><a href="https://pubmed.ncbi.nlm.nih.gov/42285530/" target="_blank">PubMed →</a></div></div><div class="news-card"><div class="card-header-row"><span class="emoji-sm">💻</span><span class="utility-mid utility-sm">中</span></div><h3>以機器學習分類重度憂鬱症患者的腦皮層血流反應</h3><p class="journal-source"></p><p>利用 fNIRS 和機器學習技術，發現青少年 MDD 患者額顳葉區域的血流反應異常，可作為識別工具。</p><div class="card-footer"><span class="tag">青少年</span><span class="tag">重度憂鬱症</span><span class="tag">神經影像</span><span class="tag">機器學習</span><a href="https://pubmed.ncbi.nlm.nih.gov/42264311/" target="_blank">PubMed →</a></div></div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div><div class="topic-row"><span class="topic-name">Esketamine</span><div class="topic-bar-bg"><div class="topic-bar" style="width:8%"></div></div><span class="topic-count">4</span></div><div class="topic-row"><span class="topic-name">難治型憂鬱症</span><div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div><span class="topic-count">48</span></div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">Esketamine</span><span class="keyword">TRD</span><span class="keyword">Ketamine</span><span class="keyword">rTMS</span><span class="keyword">Neuroplasticity</span><span class="keyword">Suicide Risk</span><span class="keyword">Biomarkers</span><span class="keyword">MDD</span></div></div>
+
+  <div class="clinic-banner">
+    <div class="clinic-links">
+      <a href="https://www.leepsyclinic.com/" class="clinic-link" target="_blank">
+        <span class="clinic-icon">🏥</span>
+        <span class="clinic-name">李政洋身心診所首頁</span>
+        <span class="clinic-arrow">→</span>
+      </a>
+      <a href="https://blog.leepsyclinic.com/" class="clinic-link" target="_blank">
+        <span class="clinic-icon">📬</span>
+        <span class="clinic-name">訂閱電子報</span>
+        <span class="clinic-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed · 分析模型：GLM-4.7-Flash</span>
+    <span><a href="https://github.com/u8901006/esketamine-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
